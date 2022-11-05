@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const RepoData = ({ repo }) => {
   return (
     <div className="home">
+      
       <div className="home-cont">
         <h1>
           <span className="span">Repo:</span> {`${repo.name}`}

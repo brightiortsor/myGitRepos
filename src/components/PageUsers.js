@@ -1,3 +1,3 @@
 //number of users to display per page
 
-export const PageUsers = 3;
+export const PageUsers = 5;

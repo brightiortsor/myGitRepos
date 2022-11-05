@@ -4,6 +4,7 @@ import LoadingIcon from "../images/Loading_icon.gif";
 import Profiles from "./Profiles.js";
 import Pagination from "./Pagination";
 import { PageUsers } from "./PageUsers";
+import { Helmet } from "react-helmet";
 
 export default function Repos() {
   const [repos, setRepos] = useState([]);
@@ -36,28 +37,39 @@ export default function Repos() {
     setPage((prev) => prev + 1);
   };
   return (
-    <div className="loader">
-      {loading ? (
-        <img src={LoadingIcon} alt="" />
-      ) : (
-        <div>
-          <h1 className="title">Bright Iortsor's GitHub Repos</h1>
-          <p className="pages">
-            Page {page} of [{totalPages}]
-          </p>
-          <hr />
-          <Profiles repos={repos} page={page} id={repos.name} />
-        </div>
-      )}
+    <>
+      <Helmet>
+        <title>All Repos</title>
+        <meta
+          name="description"
+          content="This is the home page for my github repositories using the github api calls"
+        />
+        <link rel="canonical" href="/repos" />
+      </Helmet>
+      <div className="loader">
+        {loading ? (
+          <img src={LoadingIcon} alt="" />
+        ) : (
+          <div>
+            <h1 className="title">Bright Iortsor's GitHub Repos</h1>
 
-      <Pagination
-        totalPages={totalPages}
-        handlePrev={handlePrev}
-        handleClick={handleClick}
-        handleNext={handleNext}
-        disabledPrev={page <= 1}
-        disabledNext={page >= totalPages}
-      />
-    </div>
+            <p className="pages">
+              Page {page} of [{totalPages}]
+            </p>
+            <hr />
+            <Profiles repos={repos} page={page} id={repos.name} />
+          </div>
+        )}
+
+        <Pagination
+          totalPages={totalPages}
+          handlePrev={handlePrev}
+          handleClick={handleClick}
+          handleNext={handleNext}
+          disabledPrev={page <= 1}
+          disabledNext={page >= totalPages}
+        />
+      </div>
+    </>
   );
 }

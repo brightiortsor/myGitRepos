@@ -1,22 +1,42 @@
 import React from "react";
 import "../App.css";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   return (
-    <div className="wrapper">
-      <h1>WELCOME TO ASSIGNMENT HOMEPAGE</h1>
-      <h3>Assignment 2</h3>
-      <p>
-        Setup react-router, implement Nested routes, 404 page, and Error
-        boundary. Set up client-side pagination using randomuser.me API in one
-        of your routes called Users - you should show the prev, next, and
-        navigation to individual pages 1, 2, 3, 4, 5 etc. Implement
-        accessibility and disabled state and API loading states. The modality of
-        submission follows the assignment 1 approach. During which I will give
-        you another opportunity to submit Assignment 1 again. C My love for you
-        all knows no bounds. Unconditional, they call it. We will submit it next
-        week Monday.
-      </p>
+    <div className="home">
+      <Helmet>
+        <title>Home page</title>
+        <meta
+          name="description"
+          content="This is the home page for my github repositories using the github api calls"
+        />
+        <link rel="canonical" href="/" />
+      </Helmet>
+      <div className="home-cont home-cont-div">
+        <h1 className="home--header home--title">
+          WELCOME TO MY GitHub REPOS' LOG
+        </h1>
+        <hr />
+        <div className="home-image-div">
+          <img
+            src="https://avatars.githubusercontent.com/u/99312664?v=4"
+            alt=""
+            className="home--image"
+          />
+        </div>
+        <div className="home-details">
+          <p>Name: Bright Iortsor</p>
+          <p>Username: @brightiortsor</p>
+          <p>Twitter: @TheFineUncle</p>
+          <p>Title: Frontend Engineer</p>
+          <p>Followers: 18</p>
+          <p>Following: 19</p>
+          <p>
+            BIO: Jack of all trades, master of many & still better than most!
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
