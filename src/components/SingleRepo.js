@@ -19,7 +19,7 @@ export default function SingleRepo() {
       console.log(data);
     };
     fetchUsers();
-  }, []);
+  }, [userId]);
 
   return loading ? (
     <div>Loading...</div>
