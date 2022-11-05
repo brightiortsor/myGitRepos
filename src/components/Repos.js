@@ -20,8 +20,6 @@ export default function Repos() {
       const data = await response.json();
       setLoading(false);
       setRepos(data);
-      console.log(data);
-
       setTotalPages(Math.ceil(data.length / PageUsers));
     };
     fetchUsers();
@@ -48,7 +46,7 @@ export default function Repos() {
             Page {page} of [{totalPages}]
           </p>
           <hr />
-          <Profiles repos={repos} page={page} />
+          <Profiles repos={repos} page={page} id={repos.name} />
         </div>
       )}
 

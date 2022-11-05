@@ -12,7 +12,7 @@ const RepoData = ({ repo }) => {
           <span className="span">Stack: </span> {`${repo.language}`}
         </h3>
         <div className="error-btn">
-          <Link to={`/repos/${repo.id}`} className="btn">
+          <Link to={`/repos/${repo.name}`} className="btn">
             CheckOut Repo
           </Link>
         </div>

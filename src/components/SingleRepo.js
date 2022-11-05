@@ -8,7 +8,7 @@ export default function SingleRepo() {
   const { userId } = useParams();
 
   useEffect(() => {
-    const URL = `https://api.github.com/users/brightiortsor/repos`;
+    const URL = `https://api.github.com/repos/brightiortsor/${userId}`;
     const fetchUsers = async () => {
       setLoading(true);
       const response = await fetch(URL);
@@ -20,10 +20,10 @@ export default function SingleRepo() {
     fetchUsers();
   }, []);
 
-  return (
+  return loading ? <div>Loading...</div> : (
     <div>
       <div>
-        <h1></h1>
+        <h1>{repos.name} </h1>
       </div>
       <Link to="/repos">Back to repos</Link>
     </div>
