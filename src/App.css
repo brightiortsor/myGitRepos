@@ -211,4 +211,8 @@ h3 {
   .home-cont-div p {
     font-size: 1em;
   }
+  .home-cont h1,
+  h3 {
+    font-size: 16px;
+  }
 }
