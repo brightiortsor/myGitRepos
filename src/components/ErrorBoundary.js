@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-function refreshPage() {
-  //window.location.reload(false);
-}
+// function refreshPage() {
+//   //window.location.reload(false);
+// }
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -23,9 +23,9 @@ class ErrorBoundary extends Component {
         <div>
           <h1 className="error-header">Oops! Something went wrong!!!</h1>
           <div className="error-btn">
-            <button className="btn">
-              <Link to="/">Refresh</Link>
-            </button>
+            <Link to="/">Refresh</Link>
+            {/* <button className="btn">
+            </button> */}
           </div>
         </div>
       );
