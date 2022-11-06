@@ -206,7 +206,17 @@ h3 {
   justify-content: center;
   margin-top: 1rem;
 }
+.error-header {
+  text-align: center;
+  margin: 3rem 0;
+}
 
+.error-boundary {
+  margin: 4rem 0;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 15px;
+}
 @media screen and (max-width: 600px) {
   .home-cont-div p {
     font-size: 1em;
